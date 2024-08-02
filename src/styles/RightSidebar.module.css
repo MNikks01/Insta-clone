@@ -4,6 +4,12 @@
     padding: 10px;
 }
 
+@media (max-width: 500px) {
+    .rightSidebar {
+        display: none;
+    }
+}
+
 .top {
     display: flex;
     flex-direction: row;

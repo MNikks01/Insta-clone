@@ -34,8 +34,9 @@ function FeedComp() {
                     src="https://images.unsplash.com/photo-1719727033346-00f93d18d7e8?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                     alt=""
                 />
+
             </div>
-            <div>
+            <div className={styles.allPosts}>
                 <AllPosts />
             </div>
         </div>

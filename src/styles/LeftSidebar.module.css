@@ -6,6 +6,9 @@
     justify-content: space-between !important;
     margin: 10px;
 
+    position: fixed;
+    left: 0;
+
     border-right: 1px solid lightgray;
 }
 
@@ -28,6 +31,9 @@
     border-radius: 7px;
 
     transition: all 0.2s ease-in-out;
+
+    color: black;
+    text-decoration: 0px solid white underline;
 }
 
 .oneOption:hover {
@@ -41,4 +47,10 @@
     font-weight: 700;
     font-family: sans-serif;
     margin-left: 12px;
+}
+
+@media (max-width: 500px) {
+    .leftSidebar {
+        display: none;
+    }
 }

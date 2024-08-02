@@ -1,7 +1,15 @@
 import React from 'react'
 import styles from '../../styles/RightSidebar.module.css'
+import { redirect, useNavigate } from 'react-router-dom'
 
 function RightSidebar() {
+
+    const navigate = useNavigate()
+
+    const handleRedirect = () => {
+        navigate('/messages')
+    }
+
     return (
         <div className={styles.rightSidebar}>
 
@@ -25,7 +33,7 @@ function RightSidebar() {
 
 
                 {/* switch button */}
-                <p>Switch</p>
+                <button onClick={handleRedirect}>Switch</button>
             </div>
 
             {/* mid */}

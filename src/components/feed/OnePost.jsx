@@ -7,26 +7,30 @@ import { FaRegBookmark } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa6";
 import { FiMessageCircle } from "react-icons/fi";
 import { TbSend } from "react-icons/tb";
+import { Link } from 'react-router-dom';
 
 function OnePost(props) {
 
     const { postImage, userHandleId, postTimestamp, postLocation, userAvatar, likesCount, postCaption, commentCount } = props
-
 
     return (
         <div className={styles.OnePost}>
             {/* top */}
             <div className={styles.top}>
                 {/* avatar */}
-                <img
-                    src={userAvatar}
-                    alt={userAvatar}
-                />
+                <Link to={`/friend/${userHandleId}`} target='_blank'>
+                    <img
+                        src={userAvatar}
+                        alt={userAvatar}
+                    />
+                </Link>
 
                 <div className={styles.info}>
                     {/* userhandleid && varified icon && time */}
                     <h3>
-                        {userHandleId}
+                        <Link to={`/friend/${userHandleId}`} target='_blank'>
+                            {userHandleId}
+                        </Link>
                         <MdVerified style={{
                             marginLeft: '5px',
                             color: 'blue',
@@ -80,7 +84,15 @@ function OnePost(props) {
             <div className={styles.bottom}>
                 {
                     postCaption && (
-                        <h3><span style={{ fontWeight: 'bold', marginRight: '5px' }}>{userHandleId}</span><span>{postCaption}</span></h3>
+                        <h3>
+                            {/* <Link to={'/friend'}> */}
+                            <span style={{
+                                fontWeight: 'bold',
+                                marginRight: '5px',
+                            }}>{userHandleId}</span>
+                            {/* </Link> */}
+                            <span>{postCaption}</span>
+                        </h3>
                     )
                 }
                 {
