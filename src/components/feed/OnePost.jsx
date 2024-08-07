@@ -42,7 +42,7 @@ function OnePost(props) {
 
                         <span style={{
                             color: 'gray',
-                        }}>{postTimestamp}</span>
+                        }}>{postTimestamp.toDate().toDateString()}</span>
 
                     </h3>
                     {/* adrress/location */}

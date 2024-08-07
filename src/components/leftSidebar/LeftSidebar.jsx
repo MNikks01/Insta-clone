@@ -4,9 +4,25 @@ import { FaThreads } from "react-icons/fa6";
 import { IoMenuOutline } from "react-icons/io5";
 
 import { allOptions } from '../../constants/allposts'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+
+import { signOut } from 'firebase/auth'
+import { auth } from '../../firebase'
 
 function LeftSidebar() {
+
+    const navigate = useNavigate()
+    const handleUserSignOut = (e) => {
+        e.preventDefault();
+
+        signOut(auth)
+            .then(() => {
+                navigate('/login')
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+    }
 
     return (
         <div className={styles.leftSidebar}>
@@ -39,6 +55,12 @@ function LeftSidebar() {
                             <h1>Profile</h1>
                         </div>
                     </Link>
+
+                    <div
+                        onClick={handleUserSignOut}
+                        className={styles.oneOption}>
+                        <h1>Signout</h1>
+                    </div>
                 </div>
             </div>
 

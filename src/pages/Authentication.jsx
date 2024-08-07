@@ -1,12 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import SignIn from './SignIn'
 import SignUp from './SignUp'
 
 function Authentication() {
+
+    const [showPage, setshowPage] = useState('signup')
+
     return (
         <div>
-            <SignIn />
-            <SignUp />
+            {
+                showPage === 'signin' ?
+                    <SignIn
+                        setshowPage={setshowPage}
+                    /> :
+                    <SignUp
+                        setshowPage={setshowPage}
+                    />
+            }
         </div>
     )
 }

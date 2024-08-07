@@ -17,7 +17,7 @@ import ErrorPage from './pages/ErrorPage.jsx'
 import FriendsProfilePage from './pages/FriendsProfilePage.jsx'
 
 const routes = createBrowserRouter([
-  { path: '/', element: <HomePage /> },
+  { path: '/', element: <App /> },
   { path: '/home', element: <HomePage /> },
   { path: '/search', element: <SearchPage /> },
   { path: '/login', element: <Authentication /> },
